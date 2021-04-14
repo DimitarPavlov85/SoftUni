@@ -7,9 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner cs =new Scanner(System.in);
-        String name= cs.nextLine();
-        int age =Integer.parseInt(cs.nextLine());
-        double score =Double.parseDouble(cs.nextLine());
-        System.out.printf("Name: %s, Age: %d, Grade: %.2f",name,age,score);
+        String Name= cs.nextLine();
+        int Age =Integer.parseInt(cs.nextLine());
+        double Score =Double.parseDouble(cs.nextLine());
+        System.out.printf("Name: %s, Age: %d, Grade: %.2f",Name,Age,Score);
     }
 }

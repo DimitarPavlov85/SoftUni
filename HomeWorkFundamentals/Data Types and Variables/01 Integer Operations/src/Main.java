@@ -9,6 +9,6 @@ public class Main {
         int thurdnumber=Integer.parseInt(sc.nextLine());
         int fourthnumber=Integer.parseInt(sc.nextLine());
         int result=fourthnumber*((firstnumber+secondnumber) /thurdnumber);
-        System.out.print(result);
+        System.out.print(result-);
     }
 }

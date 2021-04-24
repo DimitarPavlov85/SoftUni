@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
         int Number =sc.nextInt();
-        for (char i='a';i<'a'+Number;i++){
-            for(char j='a';j<'a'+Number;j++){
-                for (char k='a';k<'a'+Number;k++){
-                    System.out.printf("%c%c%c\n",i,j,k);
+        for (int i=97;i<97+Number;i++){
+            for(int j=97;j<97+Number;j++){
+                for (int k=97;k<97+Number;k++){
+                    System.out.printf("%c%c%c\n",(char)i,(char)j,(char)k);
                 }
             }
         }

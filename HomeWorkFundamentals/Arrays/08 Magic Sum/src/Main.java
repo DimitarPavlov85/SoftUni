@@ -13,7 +13,7 @@ public class Main {
         long Digit = sc.nextInt();
         boolean IsSum = false;
         for (int i = 0; i < ArrayOfDigits.length; i++) {
-            for (int j = i; j < ArrayOfDigits.length; j++) {
+            for (int j = i+1; j < ArrayOfDigits.length; j++) {
                 if (ArrayOfDigits[i] + ArrayOfDigits[j] == Digit) {
                     System.out.printf("%d%s%d\n", ArrayOfDigits[i], " ", ArrayOfDigits[j]);
                     IsSum = true;

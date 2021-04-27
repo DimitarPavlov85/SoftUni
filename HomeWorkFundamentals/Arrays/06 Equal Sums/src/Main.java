@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String LineOfStrings = sc.nextLine();
         String[] ArrayOfDigits = LineOfStrings.split(" ");
-        int[] ArrayOfIntegers = new int[ArrayOfDigits.length];
+        long[] ArrayOfIntegers = new long[ArrayOfDigits.length];
         for (int i = 0; i < ArrayOfIntegers.length; i++) {
             ArrayOfIntegers[i] = Integer.parseInt(ArrayOfDigits[i]);
         }
@@ -22,8 +22,8 @@ public class Main {
         else {
             boolean IsEqualSum=false;
             for (int i = 0; i < ArrayOfIntegers.length; i++) {
-                int LeftSum = 0;
-                int RightSum = 0;
+                long LeftSum = 0;
+                long RightSum = 0;
                 for (int k = CurrentRightIndex; k < ArrayOfIntegers.length; k++) {
                     RightSum += ArrayOfIntegers[k];
                 }

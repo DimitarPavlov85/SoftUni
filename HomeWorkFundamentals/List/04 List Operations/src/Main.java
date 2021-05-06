@@ -31,26 +31,28 @@ public class Main {
                 Digitts.add(Digitts.size(), DigitToAdd);
             } else if (Commands[0].equals("Remove")) {
                 int Index = Integer.parseInt(Commands[1]);
-                if (Index > Digitts.size() - 1) {
+                if (Index > Digitts.size() - 1|| Index<0) {
                     System.out.print("Invalid index\n");
                 } else {
                     Digitts.remove(Index);
                 }
             } else if (Commands[0].equals("Insert")) {
                 int Index = Integer.parseInt(Commands[2]);
-                if (Index > Digitts.size()) {
+                if (Index > Digitts.size() || Index<0) {
                     System.out.print("Invalid index");
                 } else {
                     int Value = Integer.parseInt(Commands[1]);
                     Digitts.add(Index, Value);
                 }
-            } else if (Commands[0].equals("Shift")) {
+            }
+            else if (Commands[0].equals("Shift")) {
                 int Index = Integer.parseInt(Commands[2]);
 
-                if (Index > Digitts.size()) {
+                if (Index > Digitts.size()|| Index<0) {
                     System.out.print("Invalid index\n");
-
-                } else if (Commands[1].equals("left")) {
+break;
+                }
+                else if (Commands[1].equals("left")) {
                     for (int i = 0; i < Index; i++) {
                         Digitts.add(Digitts.size(), Digitts.get(i));
                     }
@@ -59,9 +61,10 @@ public class Main {
                         Digitts.remove(0);
                         Index--;
                     }
-                } else if (Commands[1].equals("right")) {
-                    Index = Digitts.size() - Index;
-                    for (int i = Index; i < Digitts.size(); i++) {
+                }
+                else if (Commands[1].equals("right")) {
+                    int StartIndex = Digitts.size() - Index;
+                    for (int i = StartIndex; i < Digitts.size(); i++) {
                         int currentdigit = Digitts.get(i);
                         Digitts.remove(i);
                         Digitts.add(0, currentdigit);
@@ -71,5 +74,8 @@ public class Main {
             CommandsAndValues = sc.nextLine();
         }
         PrintList(Digitts);
+        if(Digitts.size()==0){
+            System.out.print(0);
+        }
     }
 }

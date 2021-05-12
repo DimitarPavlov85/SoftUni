@@ -4,68 +4,84 @@ import java.util.Scanner;
 
 public class Main {
     public static class Cars {
-        String Type;
-        String Kind;
-        String Color;
-        int Power;
+        String type;
+        String kind;
+        String color;
+        int power;
 
         Cars(String _type, String _kind, String _color, int _power) {
-            this.Type = _type;
-            this.Kind = _kind;
-            this.Color = _color;
-            this.Power = _power;
+            this.type = _type;
+            this.kind = _kind;
+            this.color = _color;
+            this.power = _power;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public String getKind() {
+            return kind;
+        }
+
+        public String getColor() {
+            return color;
+        }
+
+        public int getPower() {
+            return power;
         }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Cars> Cars = new ArrayList<>();
-        String Line = sc.nextLine();
-        while (!Line .equals("End")) {
-            String[] DataOfCars = Line.split(" ");
-            String CurrentType = DataOfCars[0];
-            String FirstLetter=CurrentType.substring(0,1);
-            FirstLetter=FirstLetter.toUpperCase();
-            String AllLetters=CurrentType.substring(1,CurrentType.length());
-            CurrentType=FirstLetter+AllLetters;
-            String CurrentKind = DataOfCars[1];
-            String CurrentColor = DataOfCars[2];
-            int CurrentPower = Integer.parseInt(DataOfCars[3]);
-            if(CurrentPower>0){
-                Cars p = new Cars(CurrentType, CurrentKind, CurrentColor, CurrentPower);
+        List<Cars> cars = new ArrayList<>();
+        String line = sc.nextLine();
+        while (!line .equals("End")) {
+            String[] dataOfCars = line.split(" ");
+            String currentType = dataOfCars[0];
+            String firstLetter=currentType.substring(0,1);
+            firstLetter=firstLetter.toUpperCase();
+            String allLetters=currentType.substring(1,CurrentType.length());
+            currentType=firstLetter+allLetters;
+            String currentKind = dataOfCars[1];
+            String currentColor = dataOfCars[2];
+            int currentPower = Integer.parseInt(DataOfCars[3]);
+            if(currentPower>0){
+                Cars p = new Cars(currentType, currentKind, currentColor, currentPower);
                 Cars.add(p);
             }
-            Line = sc.nextLine();
+            line = sc.nextLine();
         }
-        String Reading=sc.nextLine();
-        while(!Reading.equals("Close the Catalogue")){
+        String reading=sc.nextLine();
+        while(!reading.equals("Close the Catalogue")){
             for(int i=0;i<Cars.size();i++){
-                if(Cars.get(i).Kind.equals(Reading)){
-                    System.out.printf("Type: %s\n",Cars.get(i).Type);
-                    System.out.printf("Model: %s\n",Cars.get(i).Kind);
-                    System.out.printf("Color: %s\n",Cars.get(i).Color);
-                    System.out.printf("Horsepower: %s\n",Cars.get(i).Power);
+                if(Cars.get(i).kind.equals(Reading)){
+                    System.out.printf("Type: %s\n",Cars.get(i).type);
+                    System.out.printf("Model: %s\n",Cars.get(i).kind);
+                    System.out.printf("Color: %s\n",Cars.get(i).color);
+                    System.out.printf("Horsepower: %s\n",Cars.get(i).power);
                 }
             }
-                Reading=sc.nextLine();
+                reading=sc.nextLine();
         }
-        float AverageCarsHorsePower=0;
-        float AverageTracksHorsePower=0;
+        float averageCarsHorsePower=0;
+        float averageTracksHorsePower=0;
         int countTrucks=0;
         int countCars=0;
         for(int i=0;i<Cars.size();i++){
             if(Cars.get(i).Type.equals("Truck")){
-                AverageTracksHorsePower+=Cars.get(i).Power;
+                averageTracksHorsePower+=Cars.get(i).Power;
                 countTrucks++;
 
             }
             else {
-                AverageCarsHorsePower+=Cars.get(i).Power;
+                averageCarsHorsePower+=Cars.get(i).Power;
                 countCars++;
 
             }
         }
-        System.out.printf("Cars have average horsepower of: %.2f%s\n",AverageCarsHorsePower/countCars,".");
-        System.out.printf("Trucks have average horsepower of: %.2f%s",AverageTracksHorsePower/countTrucks,".");
+        System.out.printf("Cars have average horsepower of: %.2f%s\n",averageCarsHorsePower/countCars,".");
+        System.out.printf("Trucks have average horsepower of: %.2f%s",averageTracksHorsePower/countTrucks,".");
     }
 }

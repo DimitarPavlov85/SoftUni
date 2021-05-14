@@ -2,47 +2,47 @@ import java.util.*;
 
 public class Main {
     public static class Students {
-        String FirstName;
-        String LastName;
-        float Score;
+        String firstName;
+        String lastName;
+        float score;
 
         Students(String _firstname, String _secondname, float _score) {
-            this.FirstName = _firstname;
-            this.LastName = _secondname;
-            this.Score = _score;
+            this.firstName = _firstname;
+            this.lastName = _secondname;
+            this.score = _score;
         }
 
         String GetFirstName() {
-            return this.FirstName;
+            return this.firstName;
         }
 
         String GetLastName() {
-            return this.LastName;
+            return this.lastName;
         }
 
         float GetScore() {
-            return this.Score;
+            return this.score;
         }
 
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int Number = Integer.parseInt(scanner.nextLine());
-        List<Students>Data=new ArrayList<>();
-        for(int i=0;i<Number;i++){
-            String Line = scanner.nextLine();
-            String [] DataForStudents=Line.split(" ");
-            String CurrentFurstName=DataForStudents[0];
-            String CurrentLastName=DataForStudents[1];
-            float CurrentStudentsScore=Float.parseFloat(DataForStudents[2]);
-            Students st=new Students(CurrentFurstName,CurrentLastName,CurrentStudentsScore);
-            Data.add(st);
+        int number = Integer.parseInt(scanner.nextLine());
+        List<Students>data=new ArrayList<>();
+        for(int i=0;i<number;i++){
+            String line = scanner.nextLine();
+            String [] dataForStudents=line.split(" ");
+            String currentFurstName=dataForStudents[0];
+            String currentLastName=dataForStudents[1];
+            float currentStudentsScore=Float.parseFloat(dataForStudents[2]);
+            Students st=new Students(currentFurstName,currentLastName,currentStudentsScore);
+            data.add(st);
         }
-        Collections.sort(Data, Comparator.comparing(Students::GetScore));
-        Collections.reverse(Data);
-        for(int i=0;i<Data.size();i++){
-            System.out.printf( "%s %s: %.2f\n",Data.get((i)).GetFirstName(),Data.get(i).GetLastName(),Data.get(i).GetScore());
+        Collections.sort(data, Comparator.comparing(Students::GetScore));
+        Collections.reverse(data);
+        for(int i=0;i<data.size();i++){
+            System.out.printf( "%s %s: %.2f\n",data.get((i)).GetFirstName(),data.get(i).GetLastName(),data.get(i).GetScore());
         }
     }
 }

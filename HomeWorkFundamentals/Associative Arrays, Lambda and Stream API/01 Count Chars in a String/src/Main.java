@@ -1,14 +1,11 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         String [] line=sc.nextLine().split(" ");
-        Map<Character,Integer> countChars=new HashMap<>();
+        HashMap<Character,Integer> countChars=new LinkedHashMap<>();
 
         for(int i=0;i<line.length;i++){
             char current;

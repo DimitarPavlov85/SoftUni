@@ -34,10 +34,10 @@ public class Main {
                 System.out.print("true");
                 isEmpty=true;
                 break;
+            }else {
+                deque.pop();
             }
-            else {
-                deque.poll();
-            }
+
         }
         if(isEmpty==false){
             System.out.print(minDigit);

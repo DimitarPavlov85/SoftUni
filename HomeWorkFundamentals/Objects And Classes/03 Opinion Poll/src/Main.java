@@ -26,17 +26,17 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Person> Persons=new ArrayList<>();
+        List<Person> persons=new ArrayList<>();
 
-        int Number = Integer.parseInt(sc.nextLine());
-        for (int i = 0; i < Number; i++) {
+        int number = Integer.parseInt(sc.nextLine());
+        for (int i = 0; i < number; i++) {
             String nextLine = sc.nextLine();
-            String[] LineOfData = nextLine.split(" ");
-            String Name=LineOfData[0];
-            int Age=Integer.parseInt(LineOfData[1]);
-            if(Age>30){
-                Person CurrentPerson=new Person(Name,Age);
-                Persons.add(CurrentPerson);
+            String[] lineOfData = nextLine.split(" ");
+            String name=lineOfData[0];
+            int age=Integer.parseInt(lineOfData[1]);
+            if(age>30){
+                Person currentPerson=new Person(name,age);
+                Persons.add(currentPerson);
             }
 
         }

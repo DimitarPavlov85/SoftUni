@@ -3,50 +3,50 @@ import java.util.Scanner;
 
 public class Main {
     public static class Articles {
-        private String Title;
-        private String Content;
-        private String Author;
+        private String title;
+        private String content;
+        private String author;
 
-        Articles(String _Title, String _Content, String _Author) {
-            this.Title = _Title;
-            this.Content = _Content;
-            this.Author = _Author;
+        Articles(String _title, String _content, String _author) {
+            this.title = _title;
+            this.content = _content;
+            this.author = _author;
         }
 
         public String Edit(String NewContent) {
-            return this.Content = NewContent;
+            return this.content  = NewContent;
         }
 
         public String ChangeAuthor(String NewAuthor) {
-            return this.Author = NewAuthor;
+            return this.author  = NewAuthor;
         }
 
         public String Rename(String Newtitle) {
-            return this.Title = Newtitle;
+            return this.title = Newtitle;
         }
 
         public String ToString() {
-            return this.Title + " -" + this.Content + ":" + this.Author;
+            return this.title + " -" + this.content + ":" + this.author;
         }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String Line = sc.nextLine();
-        String[] LineOfArrays = Line.split("\\,");
-        int Number = sc.nextInt();
-        Articles _articles = new Articles(LineOfArrays[0], LineOfArrays[1], LineOfArrays[2]);
-        for (int i = 0; i < Number; i++) {
-            String Comand = sc.next();
-            String NewComands=sc.nextLine();
+        String line = sc.nextLine();
+        String[] lineOfArrays = line.split("\\,");
+        int number = sc.nextInt();
+        Articles _articles = new Articles(lineOfArrays[0], lineOfArrays[1],lineOfArrays[2]);
+        for (int i = 0; i < number; i++) {
+            String comand = sc.next();
+            String newComands=sc.nextLine();
 
-            if(Comand .equals("Edit:")){
-                _articles.Edit(NewComands);
+            if(comand .equals("Edit:")){
+                _articles.Edit(newComands);
             }
-            else if(Comand.equals("ChangeAuthor:")){
-                _articles.ChangeAuthor(NewComands);
-            }else if(Comand.equals("Rename:")){
-                _articles.Rename(NewComands);
+            else if(comand.equals("ChangeAuthor:")){
+                _articles.ChangeAuthor(newComands);
+            }else if(comand.equals("Rename:")){
+                _articles.Rename(newComands);
             }
         }
         System.out.print(_articles.ToString());

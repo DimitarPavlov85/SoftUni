@@ -1,31 +1,31 @@
 import java.util.Scanner;
 
 public class Main {
-    public static int SumOfDigits(int Number) {
-        int Result = 0;
-        while (Number > 0) {
-            Result += Number % 10;
-            Number = Number / 10;
+    public static int sumOfDigits(int number) {
+        int result = 0;
+        while (number > 0) {
+            result += number % 10;
+            number = number / 10;
         }
-        return Result;
+        return result;
     }
 
-    public static boolean isOdd(int Number) {
+    public static boolean isOdd(int number) {
         boolean isodd = false;
-        while (Number > 0) {
-            int CurrentDigit = Number / 10;
-            if (CurrentDigit % 2 != 0) {
+        while (number > 0) {
+            int currentDigit = number / 10;
+            if (currentDigit % 2 != 0) {
                 isodd = true;
             }
-            Number = Number / 10;
+            number = number / 10;
         }
         return isodd;
     }
 
-    public static void PrintTopNumberInRange(int Number) {
+    public static void PrintTopNumberInRange(int number) {
 
-        for (int i = 1; i < Number; i++) {
-            int current = SumOfDigits(i);
+        for (int i = 1; i < number; i++) {
+            int current = sumOfDigits(i);
             boolean isodd = isOdd(i);
             if (isodd == true && current % 8 == 0) {
                 System.out.println((i));

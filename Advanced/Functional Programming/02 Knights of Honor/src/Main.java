@@ -10,7 +10,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Consumer<String>print=s-> System.out.println("Sir "+s);
         List<String> names = Arrays.stream(sc.nextLine().split(" "))
-                .collect(Collectors.toList());
-        names.stream().forEach(print);
+                                   .collect(Collectors.toList());
+        names.forEach(print);
     }
 }

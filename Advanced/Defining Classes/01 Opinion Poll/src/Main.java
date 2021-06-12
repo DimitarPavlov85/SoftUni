@@ -10,7 +10,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int number = Integer.parseInt(sc.nextLine());
         List<People> list = new ArrayList<>();
-
         for (int i = 0; i < number; i++) {
             String[] data = sc.nextLine().split(" ");
             String currentName = data[0];
@@ -20,8 +19,13 @@ public class Main {
                 list.add(current);
             }
         }
+        Comparator<People> isCompare = (a, b) -> {
+            return a.getName().compareTo(b.getName());
+        };
 
-        Collections.sort(list,Comparator.comparing(People::getName));
-        list.forEach(e-> System.out.println(e.getName()+ " - "+e.getAge()));
+        list.sort(isCompare);
+        //  Collections.sort(list,Comparator.comparing(People::getName));
+        list.forEach(e -> System.out.println(e.getName() + " - " + e.getAge()));
+
     }
 }

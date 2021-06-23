@@ -3,6 +3,7 @@ import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -32,16 +33,14 @@ public class Main {
         }
 
         String comand = sc.nextLine();
+        Predicate<Car>isCorrect=e->e.cargo.getCargoType().equals("fragile")
+                && e.tyre.getTyre1Pressure() <1
+                || e.tyre.getTyre2Pressure() <1
+                || e.tyre.getTyre3Pressure() <1
+                || e.tyre.getTyre4Pressure() <1;
+
         if (comand.equals("fragile")) {
-            for (Car e : setFromCars) {
-                if (e.cargo.getCargoType().equals("fragile")
-                        && e.tyre.getTyre1Pressure() < 1
-                        || e.tyre.getTyre2Pressure() < 1
-                        || e.tyre.getTyre3Pressure() < 1
-                        || e.tyre.getTyre4Pressure() < 1) {
-                    System.out.println(e.engine.getModel());
-                }
-            }
+            setFromCars.stream().collect(Collectors.groupingBy(e->e.cargo.getCargoType().equals("fragile")&&e.tyre.getTyre1Pressure()<1));
 
         }
         else if (comand.equals("flamable")) {

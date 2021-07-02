@@ -14,7 +14,7 @@ enum Cards {
     }
     }
     public static void main(String[] args) {
-   
+
         System.out.println("Card Suits:");
         System.out.println("Ordinal value: "+Cards.CLUBS.index+"; Name value: "+Cards.CLUBS);
         System.out.println("Ordinal value: "+Cards.DIAMONDS.index+"; Name value: "+Cards.DIAMONDS);
